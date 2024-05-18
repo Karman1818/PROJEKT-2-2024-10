@@ -32,5 +32,12 @@ window.addEventListener("scroll", function() {
   
   lastScrollTop }, false);
 
+  window.addEventListener('scroll', function() {
+    let scrolled = window.scrollY;
+    let header = document.querySelector('.header');
+    header.style.backgroundPositionY = -(scrolled * 0.5) + 'px'; // Adjust the multiplier for desired parallax effect
+});
+
+
 
   

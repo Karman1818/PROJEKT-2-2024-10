@@ -25,10 +25,8 @@ window.addEventListener("scroll", function() {
   let currentScrollTop = window.scrollY || document.documentElement.scrollTop;
 
   if (currentScrollTop > lastScrollTop) {
-    // Przewijanie w dół
     navbar.classList.add('hidden');
   } else {
-    // Przewijanie w górę
     navbar.classList.remove('hidden');
   }
   

@@ -40,7 +40,10 @@ body.light-mode .navbar {
   font-weight: bold;
   letter-spacing: 2px;
   margin-left: 3vw;
-  
+}
+.navbar-brand a{
+  text-decoration: none;
+  color: white;
 }
 
 .navbar-nav {
@@ -58,7 +61,11 @@ body.light-mode .navbar {
   text-decoration: none;
   color: white;
   font-size: 16px;
-  transition: color 0.3s;
+  transition: color 0.3s, text-decoration 0.3s;
+}
+
+.nav-item a:hover {
+  color: #6c63ff;
 }
 
 body.light-mode .nav-item a {
@@ -446,4 +453,41 @@ body.dark-mode .promo-text h1 {
   .gallery-item {
       width: calc(50% - 20px);
   }
+
+  .promo-section {
+    padding: 20px;
+    height: auto;
+  }
+  
+  .promo-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .promo-images {
+    width: 100%;
+    height: auto;
+    margin-top: 0;
+    margin-left: 60px;
+    margin-right: 0;
+  }
+  
+  .promo-images img {
+    width: 90%;
+    max-width: 400px;
+    margin-bottom: 20px;
+    position: relative;
+    left: auto;
+    transform: translateY(0);
+  }
+  
+  .promo-images .image1,
+  .promo-images .image2,
+  .promo-images .image3 {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+    position: static;
+    transform: none;
+  }
+  
 }

@@ -35,9 +35,32 @@ window.addEventListener("scroll", function() {
   window.addEventListener('scroll', function() {
     let scrolled = window.scrollY;
     let header = document.querySelector('.header');
-    header.style.backgroundPositionY = -(scrolled * 0.5) + 'px'; // Adjust the multiplier for desired parallax effect
+    header.style.backgroundPositionY = -(scrolled * 0.5) + 'px';
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const images = document.querySelectorAll('.promo-images img');
+
+  const observerOptions = {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.1
+  };
+
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+      } else {
+        entry.target.classList.remove('show'); 
+      }
+    });
+  }, observerOptions);
+
+  images.forEach(image => {
+    observer.observe(image);
+  });
+});
 
 
   

@@ -39,6 +39,7 @@ window.addEventListener("scroll", function() {
 });
 
 document.addEventListener('DOMContentLoaded', function() {
+  const items = document.querySelectorAll('.item .icon img');
   const images = document.querySelectorAll('.promo-images img');
 
   const observerOptions = {
@@ -47,20 +48,27 @@ document.addEventListener('DOMContentLoaded', function() {
     threshold: 0.1
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const observerCallback = (entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('show');
       } else {
-        entry.target.classList.remove('show'); 
+        entry.target.classList.remove('show');
       }
     });
-  }, observerOptions);
+  };
+
+  const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+  items.forEach(item => {
+    observer.observe(item);
+  });
 
   images.forEach(image => {
     observer.observe(image);
   });
 });
+
 
 
   

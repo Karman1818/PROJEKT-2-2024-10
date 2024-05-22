@@ -3,20 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyQuest || XD</title>
+    <title>PyQuest || Learn</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
     <link rel="icon" type="image/icon" href="img/favicon.jpg">
-    <style>
-        .nicecontainer {
-            text-align: center;
-            margin-bottom: 300px;
-        }
-
-        .goofy-animation {
-            transition: transform 0.5s ease-in-out, filter 0.5s ease-in-out;
-        }
-    </style>
 </head>
 <body class="dark-mode">
     <nav class="navbar" id="navbar">
@@ -30,15 +20,19 @@
         <button class="swap-colors" onclick="swapColors()">Swap Colors</button>
         <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
     </nav>
-    <div class='nicecontainer'>
-        <h1 style="text-align: center; margin-top: 150px;">Zapomniałeś hasła??? przegryw XDDDDD</h1>
-        <img id="goofyImg" class="goofy-animation" style="height: 250px; width: 400px;" src="/img/xd.jpg" alt="XD">
+    <div id="quiz-container">
+        <h1>Learn and test yourself in PyQuest</h1>
+        <div id="question-container">
+            <div id="question"></div>
+            <div id="answer-buttons" class="btn-group"></div>
+        </div>
+        <button id="next-btn" class="btn">Next Question</button>
     </div>
+    <script src="learn.js"></script>
+    
 
     <footer class="footer">
         <p>&copy; 2024 PyQuest. All rights reserved.</p>
     </footer>
-
-    <script src="forgotpass.js"></script>
 </body>
 </html>
